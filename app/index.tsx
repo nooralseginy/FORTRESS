@@ -1,13 +1,13 @@
 import { View, Text, ScrollView, Pressable, StyleSheet, useWindowDimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link } from 'expo-router';
-import { Fortress } from '@/src/art/Fortress';
+import { FortressHero } from '@/src/art/FortressHero';
 import { palette } from '@/src/art/palette';
 import { DISTRICT_ORDER, DISTRICTS, DistrictId } from '@/src/game/districts';
 
 export default function Home() {
   const { width } = useWindowDimensions();
-  const fortressSize = Math.min(width - 32, 480);
+  const fortressWidth = Math.min(width - 32, 520);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -26,9 +26,11 @@ export default function Home() {
 
         {/* Hero: the fortress */}
         <View style={styles.fortressWrap}>
-          <Fortress size={fortressSize} />
-          <View style={styles.bannerOverlay}>
-            <Text style={styles.bannerText}>Highkeep</Text>
+          <FortressHero width={fortressWidth} />
+          <View style={styles.bannerOverlay} pointerEvents="none">
+            <View style={styles.bannerPlate}>
+              <Text style={styles.bannerText}>HIGHKEEP</Text>
+            </View>
           </View>
         </View>
 
@@ -125,19 +127,29 @@ const styles = StyleSheet.create({
   fortressWrap: {
     alignItems: 'center',
     marginTop: 4,
-    marginBottom: 12,
+    marginBottom: 14,
     position: 'relative',
   },
   bannerOverlay: {
     position: 'absolute',
-    top: '8%',
-    paddingHorizontal: 14,
+    top: 12,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+  },
+  bannerPlate: {
+    backgroundColor: 'rgba(26, 20, 40, 0.55)',
+    paddingHorizontal: 16,
+    paddingVertical: 6,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: palette.gold,
   },
   bannerText: {
-    color: palette.ink,
-    fontSize: 16,
-    fontWeight: '700',
-    letterSpacing: 2,
+    color: palette.parchment,
+    fontSize: 13,
+    fontWeight: '800',
+    letterSpacing: 3,
     textAlign: 'center',
   },
 
