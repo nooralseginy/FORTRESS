@@ -1,0 +1,42 @@
+# OSX
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Builds
+ios/Pods/
+android/.gradle/
+android/app/build/
+android/build/
+
+# Logs
+*.log
+
+# Env
+.env
+.env.local
+
+# Misc
+.idea/
+.vscode/
