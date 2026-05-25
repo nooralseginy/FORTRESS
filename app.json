@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Fortress",
+    "slug": "fortress",
+    "scheme": "fortress",
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fortress.app"
+    },
+    "android": {
+      "package": "com.fortress.app",
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
